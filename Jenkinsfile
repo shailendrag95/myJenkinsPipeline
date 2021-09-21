@@ -27,7 +27,6 @@ pipeline {
     stage('Deployment') {
       when {
         branch 'master'
-        // branch 'feature/dev-if-condition'
       }
       parallel {
         stage('Deployment') {
@@ -43,12 +42,6 @@ pipeline {
           }
         }
 
-      }
-    }
-
-    stage('Completed') {
-      steps {
-        echo 'Completed Process'
       }
     }
 
