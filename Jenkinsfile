@@ -25,11 +25,10 @@ pipeline {
     }
 
     stage('Deployment') {
-          when {
-            branch 'feature/dev-if-condition'
-          }
+      when {
+        branch 'feature/dev-if-condition'
+      }
       parallel {
-         
         stage('Deployment') {
           steps {
             input(message: 'Do you want to deploye', id: 'Ok')
@@ -43,6 +42,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Completed') {
+      steps {
+        echo 'Completed Process'
       }
     }
 
