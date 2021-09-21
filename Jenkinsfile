@@ -20,7 +20,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        echo "${Dmessage}"
+        echo " message ${Dmessage}"
       }
     }
 
