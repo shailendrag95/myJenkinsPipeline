@@ -20,9 +20,12 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        echo 'Deoploying'
+        echo '${Dmessage}'
       }
     }
 
+  }
+  environment {
+    Dmessage = 'Deployment completed for this Build'
   }
 }
