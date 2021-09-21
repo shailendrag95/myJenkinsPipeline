@@ -25,12 +25,12 @@ pipeline {
     }
 
     stage('Deployment') {
-      when {
-        branch 'main'
-        // branch 'feature/dev-if-condition'
-      }
       parallel {
         stage('Deployment') {
+          when {
+            branch 'main'
+            // branch 'feature/dev-if-condition'
+          }
           steps {
             input(message: 'Do you want to deploye', id: 'Ok')
             echo "message ${Dmessage}"
