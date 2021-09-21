@@ -25,9 +25,6 @@ pipeline {
     }
 
     stage('Deployment') {
-      when {
-        branch 'master'
-      }
       parallel {
         stage('Deployment') {
           steps {
@@ -42,6 +39,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Completed') {
+      steps {
+        echo 'Completed Process'
       }
     }
 
