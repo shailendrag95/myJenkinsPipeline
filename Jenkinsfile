@@ -29,7 +29,7 @@ pipeline {
          
         stage('Deployment') {
           when {
-            branch 'master'
+            branch 'feature/dev-if-condition'
           }
           steps {
             input(message: 'Do you want to deploye', id: 'Ok')
