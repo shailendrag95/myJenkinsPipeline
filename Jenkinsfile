@@ -20,6 +20,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
+        input(message: 'Do you want to deploye', id: 'Ok')
         echo "message ${Dmessage}"
       }
     }
