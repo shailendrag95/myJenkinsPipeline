@@ -26,7 +26,8 @@ pipeline {
 
     stage('Deployment') {
           when {
-            branch 'feature/dev-if-condition'
+            branch 'master'
+            // branch 'feature/dev-if-condition'
           }
       parallel {
          
