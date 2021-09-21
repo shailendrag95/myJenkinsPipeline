@@ -26,10 +26,10 @@ pipeline {
 
     stage('Deployment') {
       parallel {
-        when {
-        branch 'master'
-      }
         stage('Deployment') {
+          when {
+          branch 'master'
+          }
           steps {
             input(message: 'Do you want to deploye', id: 'Ok')
             echo "message ${Dmessage}"
